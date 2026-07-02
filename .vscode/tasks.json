@@ -5,9 +5,16 @@
             "label": "C/C++: cl.exe build active file",
             "command": "cl.exe",
             "args": [
-                "/Zi",
-                "/EHsc",
-                "/nologo",
+                "/Zi",                           // Lição 0.9: Inclui informações de depuração (Modo Debug)
+                "/EHsc",                         // Garante o tratamento correto de exceções em C++
+                "/nologo",                       // Remove a mensagem de copyright do compilador no terminal
+                
+                // --- CONFIGURAÇÕES DO LEARNCPP (0.10 e 0.11) ---
+                "/std:c++20",                    // Define o padrão da linguagem para C++20 (mude para c++23 se preferir)
+                "/permissive-",                  // Lição 0.10: Desativa extensões proprietárias e força conformidade estrita com o padrão
+                "/W4",                           // Lição 0.11: Ativa o nível 4 de avisos (Exibe todos os alertas relevantes e práticos)
+                "/WX",                           // Lição 0.11: Trata todos os avisos (warnings) como erros fatais de compilação
+                
                 "/Fe${fileDirname}\\${fileBasenameNoExtension}.exe",
                 "${file}"
             ],
